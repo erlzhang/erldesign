@@ -1,0 +1,104 @@
+/*COMMON CSS*/
+@font-face{font-family:'OpenSans';src:url('http://erl.design/fonts/OpenSans-Regular.ttf?v=4.6.3') format('truetype');font-weight:normal;font-style:normal}
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	transition:all 0.35s ease;
+}
+html,body{
+	height:100%;
+	font-family:"OpenSans","微软雅黑","宋体",Arial,Verdana,arial,serif;
+	color:#333;
+	font-size:17px;
+}
+h1,h2,h3,h4,h5{
+	font-weight:normal;
+}
+h1{
+	font-size:2rem;
+}
+h2{
+	font-size:1.5rem;
+}
+li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#999;
+}
+.container{
+	width:100%;
+	height:100%;
+}
+.main{
+	width:100%;
+	float:right;
+	padding-top:100px;
+	background-color:#efefef;
+	min-height:100%;
+}
+.footer{
+	line-height:50px;
+	margin-top:3rem;
+	text-align:center;
+	color:#999;
+	font-size:0.8em
+}
+.footer a:hover{
+	color:#84b1ed;
+}
+/*顶部*/
+.top{
+	width:100%;
+	position:fixed;
+	right:0;
+	top:0;
+	height:70px;
+	line-height:70px;
+	background-color:#fff;
+	box-shadow:2px 2px 5px #ccc;
+	z-index:111;
+	text-align:center;
+}
+.top .blog{
+	position:absolute;
+	display:inline-block;
+	padding:0 15px 0 15px;
+	margin-right:15px;
+	top:13px;
+	right:0;
+	color:#fff;
+	line-height:40px;
+	border-radius:3px;
+	background-color:#84b1ed;
+}
+.logo,.logo a{
+	font-size:1.5rem;
+	color:#333;
+}
+.logo .blue{
+	color:#84b1ed;
+}
+.author_btn{
+	position:absolute;
+	left:15px;
+	line-height:40px;
+	top:15px;
+	width:250px;
+	text-align:left;
+	cursor:pointer
+}
+.author_btn img{
+	width:40px;
+	height:40px;
+	border-radius:50%;
+	float:left;
+	margin-right:10px;
+}
+.author_btn:hover{
+	color:#84b1ed;
+}
