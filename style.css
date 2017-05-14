@@ -124,6 +124,22 @@ p{
 .author_name{
 	color:#7A9E86;
 }
+.career{
+	position:relative;
+	display:inline-block;
+}
+.career,.second,.more{
+	opacity:0;
+}
+.career-after{
+	content:"";
+	width:0;
+	height:2px;
+	background-color:#665857;
+	display:block;
+	position:absolute;
+	top:1.8rem;
+}
 .more{
 	padding:.75rem 1.5rem .75rem 0;
 	border:1px solid #fff;

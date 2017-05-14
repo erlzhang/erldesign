@@ -1,99 +1,28 @@
-/*banner切换*/
-var list = document.getElementsByClassName('product'),
-	len = list.length,
-	index = 0,
-	dot = getChildren(document.getElementsByClassName('dots')[0]);
+var name = document.getElementsByClassName('author_name')[0].innerHTML;
+var name_content = name.innerHTML;
 
-/*初始化*/
-list[index].style.opacity = 1;
-list[index].style.zIndex = 3;
-dot[index].style.opacity = 1;
-/*autoTurn(8000);*/
-for(var i=0,l=dot.length;i<l;i++){
-	dot[i].onmouseover = function(){
-		Turn(this.index);
-	}
-}
-function turnRight(){
-	hide(index);
-	if( index < len-1){
-		index++
-	}else{
-		index = 0;
-	}
-	show(index);
-}
-function autoTurn(speed){
-	setInterval(function(){
-		turnRight();
-	},speed);
-}
-function Turn(i){
-	hide(index);
-	index = i;
-	show(index);
-}
-function hide(ind){
-	list[ind].style.opacity = 0;
-	list[ind].style.zIndex = 1;
-	dot[ind].style.opacity = 0.5;
-}
+var con = document.getElementsByClassName('author_name')[0];
+con.innerHTML = name[0];
 
-function show(ind){
-	list[ind].style.opacity = 1;
-	list[ind].style.zIndex = 3;
-	dot[ind].style.opacity = 1;
-}
+var i = 1;
 
-/*顶部导航样式*/
-var menu = getChildren(document.getElementById('menu')),
-	rows = document.getElementsByClassName("row");
-
-for(var i=0,l=menu.length ; i<l;i++){
-	menu[i].onclick = function(){
-		var ind = this.index,
-			top = rows[ind].offsetTop-79;
-		document.body.scrollTop = top;
-	}
-}
-
-window.onscroll = function(){
-	var top = document.body.scrollTop;
-	
-	for( var i = 0 ; i < rows.length ; i ++ ){
-		var j = i+1;
-		if( top > (rows[i].offsetTop - 80) && (j == rows.length || top <= (rows[j].offsetTop - 80) )){
-			currentMenu(i);
-			/*if( i != document.body.rowIndex ){
-				document.body.rowIndex = i;
-			}*/
-			return;
+if( i <= name.length){
+	var increase = setInterval(function(){
+		var s = con.innerHTML;
+		con.innerHTML = s + name[i];
+		console.log(i);
+		if( i >= (name.length-1) ){
+			clearInterval(increase);
+			document.getElementsByClassName('career')[0].style.opacity = "1";
+			setTimeout(function(){
+				document.getElementsByClassName('career-after')[0].style.width = "100%";
+				document.getElementsByClassName('second')[0].style.opacity = "1";
+			},400);
+			setTimeout(function(){
+				document.getElementsByClassName('more')[0].style.opacity = "1";
+			},900);
 		}
-	}
-	console.log(document.body.rowIndex);
+		i++;
+	},150);
 }
 
-function currentMenu(ind){
-	for( var i = 0 ; i < menu.length ; i ++ ){
-		if( i == ind ){
-			menu[i].className = 'current';
-		}else{
-			menu[i].className = '';
-		}
-	}
-	
-}
-
-
-/*COMMON*/
-function getChildren(parent){
-	var children = parent.childNodes,child = [],j=0;
-	for( var i=0,l=children.length; i < l ; i++){
-		if(children[i].tagName){
-			children[i].index = j;
-			j++;
-			child.push(children[i]);
-		}
-	}
-	return child;
-}
