@@ -238,7 +238,10 @@ p{
 	padding:1.5rem 0;
 }
 h2.skill_title{
-	text-align:right;
+	text-align:center;
+}
+h2.skill_title span{
+	left:40%;
 }
 .skill_left{
 	width:30%;
