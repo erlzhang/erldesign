@@ -8,7 +8,7 @@ var list = document.getElementsByClassName('product'),
 list[index].style.opacity = 1;
 list[index].style.zIndex = 3;
 dot[index].style.opacity = 1;
-autoTurn(8000);
+/*autoTurn(8000);*/
 for(var i=0,l=dot.length;i<l;i++){
 	dot[i].onmouseover = function(){
 		Turn(this.index);
