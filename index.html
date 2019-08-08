@@ -9,136 +9,148 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="top">
+			<div class="top in">
 				<div class="top_inner">
 					<div class="logo">ERL</div>
 					<div class="slogan">Life is like a design</div>
+					<!--<div class="menu-btn" id="menu-btn">
+						<span class="menu-btn-top"></span>
+						<span class="menu-btn-middle"></span>
+						<span class="menu-btn-bottom"></span>
+					</div>
+					<div class="menu" id="menu">
+						<ul>
+							<li class="menu-item">
+								<a href="http://erl.design/blog/">
+									博客
+								</a>
+							</li>
+							<li  class="menu-item">
+								<a href="http://erl.design/blog/?cat=1">
+									设计
+									<div class="menu-item-description">设计理念教程</div>
+								</a>
+							</li>
+							<li  class="menu-item">
+								<a href="http://erl.design/blog/?cat=2">
+									前端
+									<div class="menu-item-description">前端技术资源分享</div>
+								</a>
+							</li>
+						</ul>
+
+					</div>-->
 				</div>
 			</div>
-			<div class="about">
-				<div class="about_inner row">
-					<div class="content clearfix">
-						<div class="col">
-							<img src="img/desk.png" width="500" style="float:left;" />
-						</div>
-						<div class="col author_info">
-							<h1 class="author_name">Hi! I'm Erl!</h1>
-							<h2 class="career">A Web Developer & Designer<span class="career-after"></span></h2>
-							<h3 class="second">一个做网站的</h3>
-							<a href="https://erl.im/" class="more">要了解更多么→</a>
-							<!--<p>极简主义者，专注前端简约设计。</p>-->
-						</div>
+			<div class="row about in">
+				<div class="content clearfix">
+					<div class="desk">
+						<img src="img/desk.png" width="500" style="float:left;" />
 					</div>
-					<div class="content clearfix">
-						<div class="service">
-								<div class="service_item">
-									<i class="fa fa-wordpress"></i>
-									<p>wordpress主题制作及二次开发</p>
-								</div>
-								<div class="service_item">
-									<i class="fa fa-chrome"></i>
-									<p>网站及移动界面设计制作</p>
-								</div>
-								<div class="service_item">
-									<i class="fa fa-code"></i><br />
-									<p>关注前端开发前沿技术</p>
-								</div>
-								
-							</div>
+					<div class="author_info">
+						<h1 class="author_name">Hi! I'm Erl!</h1>
+						<h2 class="career-del">A Web Developer & Designer</h2>
+						<h3 class="second">一个做网站的</h3>
+						<a href="https://erl.im/" class="more">要了解更多么→</a>
 					</div>
 				</div>
+				<span class="arrow-down act"></span>
 			</div>
 			<div class="row feature">
 				<div class="content ">
 					<div class="title">
 						<h2>PRODUCTS<span>三不包产品</span></h2>
 					</div>
-					<div class="feature_item clearfix"><a href="https://github.com/erlzhang/erlsimple" target="_blank">
-						<div class="feature_thumb">
-							<img src="img/erlsimple.png" />
+					<div class="features">
+						<div class="feature_item clearfix"><a href="https://github.com/erlzhang/jekyll-theme-persephone" target="_blank">
+							<div class="feature_thumb">
+								<img src="img/persephone.png" />
+							</div>
+							<div class="feature_intro">
+								<h2>Persephone</h2>
+								<p>极简主义者的Jekyll主题。</p>
+							</div></a>
 						</div>
-						<div class="feature_intro">
-							<h2>Erlsimple</h2>
-							<p>浅浅的文艺风，抛却冗杂，安心写作。</p>
-							<span class="btn"><i class="fa fa-angle-right"></i></span>
-						</div></a>
+						<div class="feature_item clearfix"><a href="https://github.com/erlzhang/erlsimple" target="_blank">
+							<div class="feature_thumb">
+								<img src="img/erlsimple.png" />
+							</div>
+							<div class="feature_intro">
+								<h2>Erlsimple</h2>
+								<p>浅浅的文艺风，抛却冗杂，安心写作。</p>
+							</div></a>
+						</div>
+						<div class="feature_item clearfix"><a href="https://github.com/erlzhang/dysis" target="_blank">
+							<div class="feature_thumb">
+								<img src="img/dysis.png" />
+							</div>
+							<div class="feature_intro">
+								<h2>Erlsimple</h2>
+								<p>适合摄影者使用的wordpress主题</p>
+							</div></a>
+						</div>
+						<div class="feature-next act">
+						</div>
+						<div class="feature-nav">
+							<span class="feature-nav-item c" onclick="showFeature(0)"></span>
+							<span class="feature-nav-item" onclick="showFeature(1)"></span>
+							<span class="feature-nav-item" onclick="showFeature(2)"></span>
+						</div>
 					</div>
-					<!--<div class="feature_item clearfix">
-						<div class="feature_thumb">
-							<img src="img/erlsimple.png" />
-						</div>
-						<div class="feature_intro">
-							<h2>Erlsimple</h2>
-							<p>浅浅的文艺风，抛却冗杂，安心写作。</p>
-						</div>
-					</div>-->
 				</div>
+				<span class="arrow-down"></span>
 			</div>
 			<div class="row project">
 				<div class="inner">
 					<div class="title">
 						<h2>WORK<span>各种近期的</span></h2>
 					</div>
-					<div class="content clearfix">
-						<div class="item">
-							<a href="http://demo.yexiqingxi.com/" target="_blank"><img src="img/erlsimple.png" /></a>
-						</div>
-						<div class="item">
-							<a href="https://erl.im/" target="_blank"><img src="img/dysis.png" /></a>
-						</div>
-						<div class="item">
-							<a href="http://sky.erl.im/" target="_blank"><img src="img/sky.png" /></a>
-						</div>
-						<div class="item">
-							<a href="http://sh.xdf.cn/zhuanti/2016zhongkao/" target="_blank"><img src="img/zhongkao.png" /></a>
-						</div>
-						<div class="item">
-							<a href="http://sh.xdf.cn/zhuanti/chunkao/" target="_blank"><img src="img/chunkao.png" /></a>
-						</div>
-						<div class="item">
-							<a href="http://sh.xdf.cn/zhongxue/mingxiao/" target="_blank"><img src="img/gaoxiao.png" /></a>
-						</div>
-					</div>
+					<div class="content portfolio clearfix"></div>
+					<div class="item-control-container"></div>
 				</div>
+				<span class="arrow-down"></span>
 			</div>
 			
 			<div class="row style">
 				<div class="content clearfix">
 					<div class="title">
-						<h2>STYLE<span>风格还是优势呢</span></h2>
+						<h2>STYLE<span>胡编乱造</span></h2>
 					</div>
-					<div class="style_item">
-						<img src="img/st_01.png" />
-						<h3>扁平化设计</h3>
-						<p>Google和win10都扁平化了</p>
-					</div>
-					<div class="style_item">
-						<img src="img/st_02.png" />
-						<h3>响应式自适应</h3>
-						<p>每个屏幕上都能很好地呈现</p>
-					</div>
-					<div class="style_item">
-						<img src="img/st_06.png" />
-						<h3>交互体验</h3>
-						<p>流畅的动画效果，专注用户体验</p>
-					</div>
-					<div class="style_item">
-						<img src="img/st_04.png" />
-						<h3>SEO优化</h3>
-						<p>不只是读者，搜索引擎也会很喜欢她</p>
-					</div>
-					<div class="style_item">
-						<img src="img/st_05.png" />
-						<h3>规范代码</h3>
-						<p>干净的不只是外在，保持最简洁干净的代码</p>
-					</div>
+					<div class="styles">
+						<div class="style_item">
+							<img src="img/st_01.png" />
+							<h3>扁平化设计</h3>
+							<p>Google和win10都扁平化了</p>
+						</div>
+						<div class="style_item">
+							<img src="img/st_02.png" />
+							<h3>响应式自适应</h3>
+							<p>每个屏幕上都能很好地呈现</p>
+						</div>
+						<div class="style_item">
+							<img src="img/st_06.png" />
+							<h3>交互体验</h3>
+							<p>流畅的动画效果，专注用户体验</p>
+						</div>
+						<div class="style_item">
+							<img src="img/st_04.png" />
+							<h3>SEO优化</h3>
+							<p>不只是读者，搜索引擎也会很喜欢她</p>
+						</div>
+						<div class="style_item">
+							<img src="img/st_05.png" />
+							<h3>规范代码</h3>
+							<p>干净的不只是外在，保持最简洁干净的代码</p>
+						</div>
 					
-					<div class="style_item">
-						<img src="img/st_03.png" />
-						<h3>极简主义</h3>
-						<p>抛却一切冗杂,享受简约而不简单的美好</p>
+						<div class="style_item">
+							<img src="img/st_03.png" />
+							<h3>极简主义</h3>
+							<p>抛却一切冗杂,享受简约而不简单的美好</p>
+						</div>
 					</div>
 				</div>
+				<span class="arrow-down"></span>
 			</div>
 			<div class="row skills">
 				<div class="content clearfix">
@@ -168,18 +180,25 @@
 							<li>
 								<div class="skill_name">PHP</div>
 								<div class="skill_outer">
-									<div class="skill_inner" style="width:50%"></div>
+									<div class="skill_inner" style="width:40%"></div>
 								</div>
 							</li>
 							<li>
-								<div class="skill_name">wordpress</div>
+								<div class="skill_name">Ruby</div>
 								<div class="skill_outer">
-									<div class="skill_inner" style="width:70%"></div>
+									<div class="skill_inner" style="width:60%"></div>
+								</div>
+							</li>
+							<li>
+								<div class="skill_name">Python</div>
+								<div class="skill_outer">
+									<div class="skill_inner" style="width:50%"></div>
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
+				<span class="arrow-down"></span>
 			</div>
 
 			<div class="contact row">
@@ -194,9 +213,11 @@
 				</div>
 			</div>
 			<div class="footer">
-				© 2017 Erl
+				© 2019 <a href="https://erl.im">Erl</a>
 			</div>
 		</div>
+		<script type='text/javascript' src='portfolio.class.js'></script>
+		<script type='text/javascript' src='portfolio.js'></script>
 		<script type='text/javascript' src='common.js'></script>
 	</body>
 
