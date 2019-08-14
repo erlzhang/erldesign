@@ -1,99 +1,96 @@
-/*banner切换*/
-var list = document.getElementsByClassName('product'),
-	len = list.length,
-	index = 0,
-	dot = getChildren(document.getElementsByClassName('dots')[0]);
 
-/*初始化*/
-list[index].style.opacity = 1;
-list[index].style.zIndex = 3;
-dot[index].style.opacity = 1;
-autoTurn(8000);
-for(var i=0,l=dot.length;i<l;i++){
-	dot[i].onmouseover = function(){
-		Turn(this.index);
-	}
-}
-function turnRight(){
-	hide(index);
-	if( index < len-1){
-		index++
-	}else{
-		index = 0;
-	}
-	show(index);
-}
-function autoTurn(speed){
-	setInterval(function(){
-		turnRight();
-	},speed);
-}
-function Turn(i){
-	hide(index);
-	index = i;
-	show(index);
-}
-function hide(ind){
-	list[ind].style.opacity = 0;
-	list[ind].style.zIndex = 1;
-	dot[ind].style.opacity = 0.5;
-}
+var feature = getSection('feature'),
+	style = getSection('style'),
+	project = getSection('project'),
+	skill = getSection('skills'),
+	contact = getSection('contact');
 
-function show(ind){
-	list[ind].style.opacity = 1;
-	list[ind].style.zIndex = 3;
-	dot[ind].style.opacity = 1;
-}
 
-/*顶部导航样式*/
-var menu = getChildren(document.getElementById('menu')),
-	rows = document.getElementsByClassName("row");
+var windowHeight = window.innerHeight,offset = 200;
 
-for(var i=0,l=menu.length ; i<l;i++){
-	menu[i].onclick = function(){
-		var ind = this.index,
-			top = rows[ind].offsetTop-79;
-		document.body.scrollTop = top;
-	}
-}
-
-window.onscroll = function(){
+document.body.onscroll = function(){
 	var top = document.body.scrollTop;
 	
-	for( var i = 0 ; i < rows.length ; i ++ ){
-		var j = i+1;
-		if( top > (rows[i].offsetTop - 80) && (j == rows.length || top <= (rows[j].offsetTop - 80) )){
-			currentMenu(i);
-			/*if( i != document.body.rowIndex ){
-				document.body.rowIndex = i;
-			}*/
-			return;
-		}
-	}
-	console.log(document.body.rowIndex);
-}
-
-function currentMenu(ind){
-	for( var i = 0 ; i < menu.length ; i ++ ){
-		if( i == ind ){
-			menu[i].className = 'current';
-		}else{
-			menu[i].className = '';
-		}
+	if( top >= (feature.offsetTop - windowHeight + 200) && feature.in == 0 ){
+		addClass(feature,'in');
+		feature.in = 1;
 	}
 	
+	if( top >= (style.offsetTop - windowHeight + 200) && style.in == 0 ){
+		addClass(style,'in');
+		style.in = 1;
+	}
+	
+	if( top >= (project.offsetTop - windowHeight + 200) && project.in == 0 ){
+		addClass(project,'in');
+		project.in = 1;
+	}
+	
+	if( top >= (skill.offsetTop - windowHeight + 200) && skill.in == 0 ){
+		addClass(skill,'in');
+		skill.in = 1;
+		addClass(contact,'in');
+		contact.in = 1;
+	}
 }
 
+var container = document.getElementsByClassName('features')[0];
+//var containerHeight = document.defaultView.getComputedStyle(container).height;
+var featureList = document.getElementsByClassName('feature_item');
+var featureNav = document.getElementsByClassName('feature-nav-item');
+container.style.position = 'relative';
+//container.style.height = containerHeight;
+var featureIndex = 0;
+showFeature(featureIndex);
 
-/*COMMON*/
-function getChildren(parent){
-	var children = parent.childNodes,child = [],j=0;
-	for( var i=0,l=children.length; i < l ; i++){
-		if(children[i].tagName){
-			children[i].index = j;
-			j++;
-			child.push(children[i]);
-		}
+setInterval(nextFeature,5000);
+
+document.getElementsByClassName('feature-next')[0].onclick = nextFeature;
+
+
+
+function nextFeature(){
+	if( featureIndex == (featureList.length - 1) ){
+		featureIndex = 0;
+	}else{
+		featureIndex++;
 	}
-	return child;
+	showFeature(featureIndex);
+}
+
+function showFeature(index){
+	featureIndex = index;
+	for ( var i = 0,l = featureList.length ; i < l; i++ ){
+		featureList[i].style.position = 'absolute';
+		if( index == i){
+			featureList[i].style.opacity = 1;
+			featureList[i].style.zIndex = 3;
+			addClass(featureNav[i],"c");
+		}else{
+			featureList[i].style.opacity = 0;
+			featureList[i].style.zIndex = 2;
+			featureList[i].style.display = "block";
+			removeClass(featureNav[i],"c");
+		}
+	}	
+}
+
+function getSection(className){
+	var e = document.getElementsByClassName(className)[0];
+	e.in = 0;
+	return e;
+}
+
+function addClass(e,c){
+	var o = e.className;
+	if(o && o[o.length -1]!= " " ){
+		o = o + " ";
+	}
+	e.className = o + c;
+}
+
+function removeClass(e,c){
+	var pattern = new RegExp("\\b" + c + "\\b\\s*","g");
+	var o = e.className;
+	e.className = o.replace(pattern,"");
 }
